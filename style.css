@@ -13,6 +13,9 @@ a{
   width: 100vw;
   display: flex;
 }
+
+/* PARTIE FORMULAIRE */
+
 .form{
   width: 50%;
   height: 100%;
@@ -21,6 +24,14 @@ a{
   justify-content: center;
   flex-direction: column; 
 }
+
+@media screen and (max-width: 900px){
+  .form{
+    width: 100%;
+  }
+}
+
+/* BLOC TITLE */
 
 .title{
   text-align: center;
@@ -31,17 +42,9 @@ a{
   display: none;;
 }
 
-.image{
-  height: 100%;
-  width: 50%;
-}
+/* SWITCH LOGIN / REGISTER */
 
-.image img{
-  height: 100%;
-  width: 100%;
-}
-
-.lb-header{
+.switch-form{
   position:relative;
   color: #00415d;
   margin: 5px 5px 20px 5px;
@@ -50,7 +53,8 @@ a{
   text-align:center;
   height:28px;
 }
-.lb-header a{
+
+.switch-form a{
   margin: 0 25px;
   padding: 0 20px;
   text-decoration: none;
@@ -60,10 +64,14 @@ a{
   -moz-transition: all 0.1s linear;
   transition: all 0.1s linear;
 }
-.lb-header .active{
+
+.switch-form .active{
   color: #6263FC;
   font-size: 18px;
 }
+
+/* SOCIAL CONNEXION */
+
 .social-login{
   display: flex;
   align-items: center;
@@ -91,7 +99,9 @@ a{
   box-shadow: inset 0px 1px 15px 5px rgba(0, 0, 0, 0.4);
 }
 
-.email-login,.email-signup{
+/* FORMULAIRE */
+
+.form-login, .form-register{
   display: flex;
   width: 100%;
   align-items: center;
@@ -102,25 +112,25 @@ a{
   text-align: center;
 }
 
-.u-form-group{
+.group-end{
   width:100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.u-form-group:last-child{
+.group-end:last-child{
   padding-top: 40px;
 }
 
-.u-form-group.complement{
+.group-end.complement{
   width: 423px;
   justify-content:space-between !important;
   padding-top: 50px;
 }
 
-.u-form-group input[type="email"],
-.u-form-group input[type="password"]{
+.group-end input[type="email"],
+.group-end input[type="password"]{
   width: calc(50% - 22px);
   height:45px;
   outline: none;
@@ -133,10 +143,10 @@ a{
   -moz-transition:all 0.1s linear;
   transition:all 0.1s linear;
 }
-.u-form-group input:focus{
+.group-end input:focus{
   border-color: #358efb;
 }
-.u-form-group button{
+.group-end button{
   width: 169px;
   background-color: #6263FC;
   border: none;
@@ -148,7 +158,7 @@ a{
   cursor: pointer;
 }
 
-.u-form-group button:hover{
+.group-end button:hover{
   background-color: #5859E2;
 }
 
@@ -156,7 +166,7 @@ button:disabled:hover{
   background-color: grey;
 }
 
-.u-form-group button:active{
+.group-end button:active{
   box-shadow: inset 0px 1px 15px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -168,6 +178,8 @@ button:disabled:hover{
 .forgot-password:hover{
   color: #5a5a5a;
 }
+
+/* SEPARATOR LINE */
 
 .separator{
   display: flex;
@@ -184,15 +196,6 @@ button:disabled:hover{
   width: 130px;
   height: 1px;
   background-color: black;
-}
-
-.remember{
-  position: absolute;
-  left: 50px;
-  font-size: 12px;
-  width: 75px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 
@@ -309,7 +312,7 @@ input:focus ~ .highlight {
 /* BUTTON TOGGLE */
 
 .button-cover,
-.knobs,
+.circle,
 .layer {
 position: absolute;
 top: 0;
@@ -340,7 +343,7 @@ cursor: pointer;
 z-index: 3;
 }
 
-.knobs {
+.circle {
 z-index: 2;
 }
 
@@ -351,7 +354,7 @@ transition: 0.3s ease all;
 z-index: 1;
 }
 
-#button-1 .knobs:before {
+#button-1 .circle:before {
 content: "";
 position: absolute;
 top: 2px;
@@ -364,7 +367,7 @@ border-radius: 50%;
 transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
 
-#button-1 .checkbox:checked + .knobs:before {
+#button-1 .checkbox:checked + .circle:before {
 content: "";
 left: 20px;
 background-color: #fff;
@@ -375,10 +378,21 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 background-color: #6263FC;
 }
 
-#button-1 .knobs,
-#button-1 .knobs:before,
+#button-1 .circle,
+#button-1 .circle:before,
 #button-1 .layer {
 transition: 0.3s ease all;
+}
+
+/* REMEMBER ME */
+
+.remember{
+  position: absolute;
+  left: 50px;
+  font-size: 12px;
+  width: 75px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* SECURITY */
@@ -407,6 +421,8 @@ background-color: grey;
 cursor: not-allowed;
 }
 
+/* BUTTON VIEW PASSWORD */
+
 .look, .look2{
 position: absolute;
 top: 10px;
@@ -420,4 +436,22 @@ display: none;
 
 .look2.yes{
 display: none;
+}
+
+/* PARTIE IMAGE */
+
+.image{
+  height: 100%;
+  width: 50%;
+}
+
+.image img{
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 900px){
+  .image{
+    display: none;
+  }
 }

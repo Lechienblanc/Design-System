@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" integrity="sha512-cHxvm20nkjOUySu7jdwiUxgGy11vuVPE9YeK89geLMLMMEOcKFyS2i+8wo0FOwyQO/bL8Bvq1KMsqK4bbOsPnA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+  </head>
 <body>
     <div class="container">
 
@@ -23,12 +23,12 @@
           </div>
 
           <!-- SWITCH LOGIN / REGISTER -->
-          <div class="lb-header">
-              <a href="#" class="active" id="login-box-link">Login</a>
-              <a href="#" id="signup-box-link">Sign Up</a>
+          <div class="switch-form">
+              <a href="#" class="active" id="switch-login">Login</a>
+              <a href="#" id="switch-register">Sign Up</a>
           </div>
 
-          <!-- LOGIN WITH BUTTONS -->
+          <!-- LOGIN / REGISTER WITH BUTTONS -->
           <div class="social-login">
               <a href="#">
                 <img src="assets/google.png" alt="">
@@ -48,7 +48,7 @@
           </div>
 
           <!-- LOGIN FORM -->
-          <form class="email-login">
+          <form class="form-login">
 
               <div class="group">      
                   <input type="text" required>
@@ -66,11 +66,12 @@
                   <label>Password</label>
                 </div>
 
-                <div class="u-form-group complement">
+                <div class="group-end complement">
 
+                  <!-- TOOGLE BUTTON REMEMBER ME -->
                   <div class="button r" id="button-1">
                     <input type="checkbox" class="checkbox" />
-                    <div class="knobs"></div>
+                    <div class="circle"></div>
                     <div class="layer"></div>
                     <p class="remember">Remember me</p>
                   </div>
@@ -78,13 +79,13 @@
                   <a href="#" class="forgot-password">Forgot password?</a>
               </div>
 
-              <div class="u-form-group">
+              <div class="group-end">
                   <button>Log in</button>
               </div>
           </form>
 
           <!-- REGISTER FORM -->
-          <form class="email-signup">
+          <form class="form-register">
 
             <div class="name">
               <div class="group">      
@@ -116,6 +117,8 @@
                   <span class="highlight"></span>
                   <span class="bar"></span>
                   <label>Password</label>
+
+                  <!-- SECURITY LEVEL -->
                   <div class="security">
                     <div class="pastille" id="pastille1"></div>
                     <div class="pastille" id="pastille2"></div>
@@ -123,7 +126,7 @@
                   </div>
                 </div>
 
-              <div class="u-form-group">
+              <div class="group-end">
                   <button class="register" disabled>Sign Up</button>
               </div>
           </form>
@@ -139,21 +142,21 @@
 <!-- FUNCTION OPEN LOGIN / REGISTER -->
 <script>
   // OPEN REGISTER
-  $(".email-signup").hide();
-  $("#signup-box-link").click(function(){
-    $(".email-login").fadeOut(100);
-    $(".email-signup").delay(100).fadeIn(100);
-    $("#login-box-link").removeClass("active");
-    $("#signup-box-link").addClass("active");
+  $(".form-register").hide();
+  $("#switch-register").click(function(){
+    $(".form-login").fadeOut(100);
+    $(".form-register").delay(100).fadeIn(100);
+    $("#switch-login").removeClass("active");
+    $("#switch-register").addClass("active");
     $(".title-login").css("display", "none");
     $(".title-register").css("display", "block");
   });
   // OPEN LOGIN
-  $("#login-box-link").click(function(){
-    $(".email-login").delay(100).fadeIn(100);;
-    $(".email-signup").fadeOut(100);
-    $("#login-box-link").addClass("active");
-    $("#signup-box-link").removeClass("active");
+  $("#switch-login").click(function(){
+    $(".form-login").delay(100).fadeIn(100);;
+    $(".form-register").fadeOut(100);
+    $("#switch-login").addClass("active");
+    $("#switch-register").removeClass("active");
     $(".title-login").css("display", "block");
     $(".title-register").css("display", "none");
   });
