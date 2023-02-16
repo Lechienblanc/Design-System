@@ -129,92 +129,106 @@
           </form>
         </div>
 
-        <!-- RIGHT BACKGROUND -->
+      <!-- RIGHT BACKGROUND -->
       <div class="image">
         <img src="assets/japon.png" alt="">
       </div>
+
     </div>
 
-      <script>
-        $(".email-signup").hide();
-        $("#signup-box-link").click(function(){
-        $(".email-login").fadeOut(100);
-        $(".email-signup").delay(100).fadeIn(100);
-        $("#login-box-link").removeClass("active");
-        $("#signup-box-link").addClass("active");
-        $(".title-login").css("display", "none");
-        $(".title-register").css("display", "block");
-        });
-        $("#login-box-link").click(function(){
-        $(".email-login").delay(100).fadeIn(100);;
-        $(".email-signup").fadeOut(100);
-        $("#login-box-link").addClass("active");
-        $("#signup-box-link").removeClass("active");
-        $(".title-login").css("display", "block");
-        $(".title-register").css("display", "none");
-        });
-      </script>
-      <script>
-        $(document).ready(function() {
-          $("#password").keyup(function() {
-            var number = 0;
-          
-            $.each($("#password"), function() {
-              number += $(this).val().length;
-            });
-              
-            if (number > 0) {
-              $(".security").css("display", "flex");
-            } else{
-              $(".security").css("display", "none");
-            }
+<!-- FUNCTION OPEN LOGIN / REGISTER -->
+<script>
+  // OPEN REGISTER
+  $(".email-signup").hide();
+  $("#signup-box-link").click(function(){
+    $(".email-login").fadeOut(100);
+    $(".email-signup").delay(100).fadeIn(100);
+    $("#login-box-link").removeClass("active");
+    $("#signup-box-link").addClass("active");
+    $(".title-login").css("display", "none");
+    $(".title-register").css("display", "block");
+  });
+  // OPEN LOGIN
+  $("#login-box-link").click(function(){
+    $(".email-login").delay(100).fadeIn(100);;
+    $(".email-signup").fadeOut(100);
+    $("#login-box-link").addClass("active");
+    $("#signup-box-link").removeClass("active");
+    $(".title-login").css("display", "block");
+    $(".title-register").css("display", "none");
+  });
+</script>
 
-            if ((number > 0) && (number <= 4)) {
-              $("#pastille1").css("background-color", "#CB0101");
-            }
+<!-- FUNCTION SECURITY LEVEL PASSWORD -->
+<script>
+  $(document).ready(function() {
+    $("#password").keyup(function() {
 
-            if (number > 4) {
-              $("#pastille2").css("background-color", "#FF8A00");
-              $("#pastille1").css("background-color", "#FF8A00");
-            } else {
-              $("#pastille2").css("background-color", "white");
-            }
+      // COMPTEUR NOMBRE CARACTERES DANS INPUT PASSWORD
+      var number = 0;
+  
+      // ALIMENTATION DU COMPTEUR
+      $.each($("#password"), function() {
+        number += $(this).val().length;
+      });
+        
+      // EVENEMENTS EN FONCTION DU NOMBRE DE CARACTERES DE L'INPUT
+      if (number > 0) {
+        $(".security").css("display", "flex");
+      } else{
+        $(".security").css("display", "none");
+      }
 
-            if (number >= 8) {
-              $("#pastille3").css("background-color", "#91E84C");
-              $("#pastille2").css("background-color", "#91E84C");
-              $("#pastille1").css("background-color", "#91E84C");
-              $(".register").attr("disabled", false);
-            } else {
-              $("#pastille3").css("background-color", "white");
-              $(".register").attr("disabled", true);
-            }
+      if ((number > 0) && (number <= 4)) {
+        $("#pastille1").css("background-color", "#CB0101");
+      }
 
-          });
-        });
-      </script>
-      <script>
-        $("#no-look").click(function() {
-          $("#no-look").css("display", "none");
-          $("#look").css("display", "block");
-          $(".pass").attr("type", "text");
-        });
-        $("#look").click(function() {
-          $("#no-look").css("display", "block");
-          $("#look").css("display", "none");
-          $(".pass").attr("type", "password");
-        });
+      if (number > 4) {
+        $("#pastille2").css("background-color", "#FF8A00");
+        $("#pastille1").css("background-color", "#FF8A00");
+      } else {
+        $("#pastille2").css("background-color", "white");
+      }
 
-        $("#no-look2").click(function() {
-          $("#no-look2").css("display", "none");
-          $("#look2").css("display", "block");
-          $(".pass2").attr("type", "text");
-        });
-        $("#look2").click(function() {
-          $("#no-look2").css("display", "block");
-          $("#look2").css("display", "none");
-          $(".pass2").attr("type", "password");
-        });
-      </script>
+      if (number >= 8) {
+        $("#pastille3").css("background-color", "#91E84C");
+        $("#pastille2").css("background-color", "#91E84C");
+        $("#pastille1").css("background-color", "#91E84C");
+        $(".register").attr("disabled", false);
+      } else {
+        $("#pastille3").css("background-color", "white");
+        $(".register").attr("disabled", true);
+      }
+
+    });
+  });
+</script>
+
+<!-- MOT DE PASSE VISIBLE OU PAS -->
+<script>
+  // POUR LE CHAMP PASSWORD DU REGISTER
+  $("#no-look").click(function() {
+    $("#no-look").css("display", "none");
+    $("#look").css("display", "block");
+    $(".pass").attr("type", "text");
+  });
+  $("#look").click(function() {
+    $("#no-look").css("display", "block");
+    $("#look").css("display", "none");
+    $(".pass").attr("type", "password");
+  });
+
+  // POUR LE CHAMP PASSWORD DU LOGIN
+  $("#no-look2").click(function() {
+    $("#no-look2").css("display", "none");
+    $("#look2").css("display", "block");
+    $(".pass2").attr("type", "text");
+  });
+  $("#look2").click(function() {
+    $("#no-look2").css("display", "block");
+    $("#look2").css("display", "none");
+    $(".pass2").attr("type", "password");
+  });
+</script>
 </body>
 </html>
