@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css" integrity="sha512-cHxvm20nkjOUySu7jdwiUxgGy11vuVPE9YeK89geLMLMMEOcKFyS2i+8wo0FOwyQO/bL8Bvq1KMsqK4bbOsPnA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+<body>
+    <div class="container">
+
+        <!-- FORMULAIRE -->
+        <div class="form">
+
+          <div class="title title-login">
+            <h1>Sign up <br> Login into your account </h1>
+          </div>
+
+          <div class="title title-register">
+            <h1>Register <br> Create your account </h1>
+          </div>
+
+                <!-- SWITCH LOGIN / REGISTER -->
+                <div class="lb-header">
+                    <a href="#" class="active" id="login-box-link">Login</a>
+                    <a href="#" id="signup-box-link">Sign Up</a>
+                </div>
+
+                <!-- LOGIN WITH BUTTONS -->
+                <div class="social-login">
+                    <a href="#">
+                      <img src="assets/google.png" alt="">
+                      Google
+                    </a>
+                    <a href="#">
+                        <img src="assets/facebook.png" alt="">
+                        Facebook
+                    </a>
+                </div>
+
+                <div class="separator">
+                  <div class="line"></div>
+                  <p>Or continue with</p>
+                  <div class="line"></div>
+                </div>
+
+                <!-- LOGIN FORM -->
+                <form class="email-login">
+
+                    <div class="group">      
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Email</label>
+                      </div>
+                        
+                      <div class="group">      
+                        <input class="pass2" type="password" required>
+                        <img class="look2 yes" id="look2" src="assets/look.png" alt="">
+                        <img class="look2 no" id="no-look2" src="assets/no-look.png" alt="">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                      </div>
+
+                      <div class="u-form-group complement">
+
+                        <div class="button r" id="button-1">
+                          <input type="checkbox" class="checkbox" />
+                          <div class="knobs"></div>
+                          <div class="layer"></div>
+                          <p class="remember">Remember me</p>
+                        </div>
+
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <div class="u-form-group">
+                        <button>Log in</button>
+                    </div>
+                </form>
+
+                <!-- REGISTER FORM -->
+                <form class="email-signup">
+
+                  <div class="name">
+                    <div class="group">      
+                      <input type="text" required>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label>Nom</label>
+                    </div>
+
+                    <div class="group">      
+                      <input type="text" required>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label>Prénom</label>
+                    </div>
+                  </div>
+
+                    <div class="group">      
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Email</label>
+                      </div>
+                        
+                      <div class="group">      
+                        <input class="pass" type="password" id="password" required>
+                        <img class="look yes" id="look" src="assets/look.png" alt="">
+                        <img class="look no" id="no-look" src="assets/no-look.png" alt="">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                        <div class="security">
+                          <div class="pastille" id="pastille1"></div>
+                          <div class="pastille" id="pastille2"></div>
+                          <div class="pastille" id="pastille3"></div>
+                        </div>
+                      </div>
+
+                    <div class="u-form-group">
+                        <button class="register" disabled>Sign Up</button>
+                    </div>
+                </form>
+        </div>
+
+        <!-- RIGHT BACKGROUND -->
+      <div class="image">
+        <img src="assets/japon.png" alt="">
+      </div>
+    </div>
+
+      <script>
+        $(".email-signup").hide();
+        $("#signup-box-link").click(function(){
+        $(".email-login").fadeOut(100);
+        $(".email-signup").delay(100).fadeIn(100);
+        $("#login-box-link").removeClass("active");
+        $("#signup-box-link").addClass("active");
+        $(".title-login").css("display", "none");
+        $(".title-register").css("display", "block");
+        });
+        $("#login-box-link").click(function(){
+        $(".email-login").delay(100).fadeIn(100);;
+        $(".email-signup").fadeOut(100);
+        $("#login-box-link").addClass("active");
+        $("#signup-box-link").removeClass("active");
+        $(".title-login").css("display", "block");
+        $(".title-register").css("display", "none");
+        });
+      </script>
+      <script>
+        $(document).ready(function() {
+          $("#password").keyup(function() {
+            var number = 0;
+          
+            $.each($("#password"), function() {
+              number += $(this).val().length;
+            });
+              
+            if (number > 0) {
+              $(".security").css("display", "flex");
+            } else{
+              $(".security").css("display", "none");
+            }
+
+            if ((number > 0) && (number < 4)) {
+              $("#pastille1").css("background-color", "red");
+            }
+
+            if (number > 4) {
+              $("#pastille2").css("background-color", "orange");
+            } else {
+              $("#pastille2").css("background-color", "white");
+            }
+
+            if (number >= 8) {
+              $("#pastille3").css("background-color", "green");
+              $(".register").attr("disabled", false);
+            } else {
+              $("#pastille3").css("background-color", "white");
+              $(".register").attr("disabled", true);
+            }
+
+          });
+        });
+      </script>
+      <script>
+        $("#no-look").click(function() {
+          $("#no-look").css("display", "none");
+          $("#look").css("display", "block");
+          $(".pass").attr("type", "text");
+        });
+        $("#look").click(function() {
+          $("#no-look").css("display", "block");
+          $("#look").css("display", "none");
+          $(".pass").attr("type", "password");
+        });
+
+        $("#no-look2").click(function() {
+          $("#no-look2").css("display", "none");
+          $("#look2").css("display", "block");
+          $(".pass2").attr("type", "text");
+        });
+        $("#look2").click(function() {
+          $("#no-look2").css("display", "block");
+          $("#look2").css("display", "none");
+          $(".pass2").attr("type", "password");
+        });
+      </script>
+</body>
+</html>

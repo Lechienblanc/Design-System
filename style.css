@@ -1,0 +1,423 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+  .container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+  }
+  .form{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+  }
+
+  .title{
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  .title-register{
+    display: none;;
+  }
+
+  .image{
+    height: 100%;
+    width: 50%;
+  }
+
+  .image img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .lb-header{
+    position:relative;
+    color: #00415d;
+    margin: 5px 5px 20px 5px;
+    padding-bottom:10px;
+    border-bottom: 1px solid #eee;
+    text-align:center;
+    height:28px;
+  }
+  .lb-header a{
+    margin: 0 25px;
+    padding: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+  }
+  .lb-header .active{
+    color: #6263FC;
+    font-size: 18px;
+  }
+  .social-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .social-login a{
+    width: 126px;
+    height: 43px;
+    border-radius: 40px;
+    border: 1px solid #6263FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .social-login a:hover{
+    background-color: #5859E2;
+    color: white;
+  }
+
+  .social-login a:active{
+    box-shadow: inset 0px 1px 15px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .email-login,.email-signup{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .u-form-group{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .u-form-group:last-child{
+    padding-top: 40px;
+  }
+
+  .u-form-group.complement{
+    width: 423px;
+    justify-content:space-between !important;
+    padding-top: 50px;
+  }
+
+  .u-form-group input[type="email"],
+  .u-form-group input[type="password"]{
+    width: calc(50% - 22px);
+    height:45px;
+    outline: none;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    border-radius: 2px;
+    color: #333;
+    font-size:0.8rem;
+    -webkit-transition:all 0.1s linear;
+    -moz-transition:all 0.1s linear;
+    transition:all 0.1s linear;
+  }
+  .u-form-group input:focus{
+    border-color: #358efb;
+  }
+  .u-form-group button{
+    width: 169px;
+    background-color: #6263FC;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 20px;
+    height: 55px;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+
+  .u-form-group button:hover{
+    background-color: #5859E2;
+  }
+
+  button:disabled:hover{
+    background-color: grey;
+  }
+
+  .u-form-group button:active{
+    box-shadow: inset 0px 1px 15px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .forgot-password{
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .forgot-password:hover{
+    color: #5a5a5a;
+  }
+
+  .separator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20px;
+    gap: 11px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  .line{
+    width: 130px;
+    height: 1px;
+    background-color: black;
+  }
+
+  .remember{
+    position: absolute;
+    left: 50px;
+    font-size: 12px;
+    width: 75px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+
+/* form starting stylings ------------------------------- */
+.group 			  { 
+    position:relative; 
+    margin-bottom: 10px;
+    height: 80px;
+  }
+
+  .name{
+    display: flex;
+    gap: 20px;
+  }
+
+  input 				{
+    font-size:18px;
+    padding: 10px 0;
+    display:block;
+    width:423px;
+    border:none;
+    border-bottom:1px solid #757575;
+  }
+
+  .name input{
+    width: 201.5px;
+  }
+  input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  
+  /* active state */
+  input:focus ~ label, input:valid ~ label 		{
+    top:-20px;
+    font-size:14px;
+  }
+  
+  /* BOTTOM BARS ================================= */
+  .bar{ 
+    position:relative; 
+    display:block; 
+    width:423px; 
+  }
+  .name .bar{
+    width:200px; 
+  }
+  .bar:before, .bar:after 	{
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#6263FC; 
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  .bar:before {
+    left:50%;
+  }
+  .bar:after {
+    right:50%; 
+  }
+  
+  /* active state */
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+  }
+  
+  /* HIGHLIGHTER ================================== */
+  .highlight {
+    position:absolute;
+    height:60%; 
+    width:100px; 
+    top:25%; 
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+  }
+  
+  /* active state */
+  input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+  }
+  
+  /* ANIMATIONS ================ */
+  @-webkit-keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+  @-moz-keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+  @keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+
+
+  /* BUTTON TOGGLE */
+
+  .button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button {
+  position: relative;
+  width: 39px;
+  height: 20px;
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: #B7B7B7;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+#button-1 .knobs:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-1 .checkbox:checked + .knobs:before {
+  content: "";
+  left: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#button-1 .checkbox:checked ~ .layer {
+  background-color: #6263FC;
+}
+
+#button-1 .knobs,
+#button-1 .knobs:before,
+#button-1 .layer {
+  transition: 0.3s ease all;
+}
+
+/* SECURITY */
+
+.security{
+  width: 423px;
+  height: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 5px;
+  position: absolute;
+}
+
+.pastille{
+  width: 100%;
+  height: 12px;
+  background-color: #fff;
+  border: .5px solid black;
+  border-radius: 50px;
+}
+
+button:disabled{
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.look, .look2{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.look.yes{
+  display: none;
+}
+
+.look2.yes{
+  display: none;
+}
